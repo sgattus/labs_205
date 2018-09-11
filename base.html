@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{ title }}-Remember the Extinct</title>
+    {% else %}
+    <title> Remember the Extinct ("Aka the thunderdome")</title>
+    {% endif %}
+</head>
+<body>
+    <div>Extinct Animal Page: <a href="/home">Home</a> <a href="/create_bio_page">Create Extinct Animal Bio Page</a> <a href="/animals">Extinct Animals</a></div>
+
+    {% block content %}{% endblock %}
+
+
+</body>
+</html>

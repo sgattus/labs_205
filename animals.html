@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+    {% for post in posts %}
+        <div><p><a href={{ post.links }}>{{ post.animals.username}}</a> </p></div>
+    {% endfor %}
+
+{% endblock %}
