@@ -1,6 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
 {% extends "base.html" %}
-{% block content %}
 
+{% block content %}
+    <h1> Create </h1>
+    <form action="zanzibar_leopard" method="post" >
+        {{ form.hidden_tag() }}
+        <p>
+
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.animalBio.label}}<br>
+            {{form.animalBio(size=100)}}<br>
+            {%for error in form.animalBio.errors %}}
+            <span style="color:red;">[{{error}}]</span>
+            {% endfor %}
+
+        </p>
+
+        <p>
+            {{form.animalBehavior.label}}<br>
+            {{form.animalBehavior(size=100)}}<br>
+            {%for error in form.animalBehavior.errors %}}
+            <span style="color:red;">[{{error}}]</span>
+            {% endfor %}
+
+        </p>
+
+        <p>
+            {{ form.extermination.label }}<br>
+            {{ form.extermination(size=32) }}<br>
+            {% for error in form.extermination.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+
+
+        <p>{{ form.submit() }}</p>
+    </form>
 {% endblock %}
