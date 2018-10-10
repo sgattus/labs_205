@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1> Create </h1>
-    <form action="zanzibar_leopard" method="post" >
+    <form action="" method="post" novalidate >
         {{ form.hidden_tag() }}
         <p>
 
@@ -11,6 +11,23 @@
             {% for error in form.username.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
+        </p>
+
+              <p>
+            {{form.name.label}}<br>
+            {{form.name(size=100)}}<br>
+            {%for error in form.name.errors %}}
+            <span style="color:red;">[{{error}}]</span>
+            {% endfor %}
+
+        </p>
+              <p>
+            {{form.location.label}}<br>
+            {{form.location(size=100)}}<br>
+            {%for error in form.location.errors %}}
+            <span style="color:red;">[{{error}}]</span>
+            {% endfor %}
+
         </p>
         <p>
             {{form.animalBio.label}}<br>
@@ -39,6 +56,6 @@
 
 
 
-        <p>{{ form.submit() }}</p>
+        <p>{{form.submit()}} </p>
     </form>
 {% endblock %}

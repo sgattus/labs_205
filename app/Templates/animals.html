@@ -6,8 +6,8 @@
 {% block content %}
 
 
-    {% for post in posts %}
-        <div><p><a href={{ post.links }}>{{ post.animals.username}}</a> </p></div>
+    {% for post in posts  %}
+        <div><p><a href="{{url_for('animal',name=post.animals.username.name)}}">{{post.animals.username.name}}</a></p></div>
     {% endfor %}
 
 {% endblock %}
