@@ -4,14 +4,7 @@
     <h1> Create </h1>
     <form action="" method="post" novalidate >
         {{ form.hidden_tag() }}
-        <p>
 
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}<br>
-            {% for error in form.username.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
 
               <p>
             {{form.name.label}}<br>
@@ -21,14 +14,7 @@
             {% endfor %}
 
         </p>
-              <p>
-            {{form.location.label}}<br>
-            {{form.location(size=100)}}<br>
-            {%for error in form.location.errors %}}
-            <span style="color:red;">[{{error}}]</span>
-            {% endfor %}
 
-        </p>
         <p>
             {{form.animalBio.label}}<br>
             {{form.animalBio(size=100)}}<br>
@@ -38,14 +24,6 @@
 
         </p>
 
-        <p>
-            {{form.animalBehavior.label}}<br>
-            {{form.animalBehavior(size=100)}}<br>
-            {%for error in form.animalBehavior.errors %}}
-            <span style="color:red;">[{{error}}]</span>
-            {% endfor %}
-
-        </p>
 
         <p>
             {{ form.extermination.label }}<br>
@@ -53,6 +31,16 @@
             {% for error in form.extermination.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
+        </p>
+
+        <p>
+            {{ form.year.label }}<br>
+            {{ form.year(size=32) }}<br>
+            {% for error in form.year.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
 
 
 
