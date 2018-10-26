@@ -1,36 +1,66 @@
-<html>
-    <head>
+{% extends 'bootstrap/base.html' %}
+
+    {% block title %}
         {% if title %}
         <title>{{ title }} - Microblog</title>
         {% else %}
         <title>Welcome to Microblog</title>
         {% endif %}
-    </head>
-    <body>
-        <div>
-            Microblog:
-            <a href="{{ url_for('index') }}">Home</a>
-            {% if current_user.is_anonymous %}
-            <a href="{{ url_for('login') }}">Login</a>
-            {% else %}
-            <a href="{{ url_for('logout') }}">Logout</a>
-            <a href="{{ url_for('create') }}">Create Animal</a>
-            <a href="{{ url_for('animals') }}">Extinct Animals</a>
-            <a href="{{ url_for('create_location')}}">Create Location</a>
-            <a href="{{ url_for('create_habitat')}}">Create Habitat</a>
-            {% endif %}
+    {% endblock %}
 
-        </div>
-        <hr>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
-        {% block content %}{% endblock %}
-    </body>
-</html>
+    {% block navbar %}
+        <nav class="navbar navbar-default">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ url_for('index') }}">Extinct Animals</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    {% if current_user.is_anonymous %}
+
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                        <li><a href="{{ url_for('create') }}">Create Animal</a></li>
+                        <li><a href="{{ url_for('animals') }}">Extinct Animals</a></li>
+                        <li><a href="{{ url_for('create_location')}}">Create Location</a></li>
+                        <li><a href="{{ url_for('create_habitat')}}">Create Habitat</a></li>
+                    {% endif %}
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        {% endblock %}
+
+        {% block content %}
+            <div class="container">
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <ul>
+                        <div class="alert alert-info" role="alert">{{ message }}</div>
+                    </ul>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                {% block app_content %}{% endblock %}
+            </div>
+
+        {% endblock %}
+
+

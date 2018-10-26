@@ -13,30 +13,48 @@
         {% endif %}
         {% endwith %}
 
-{% block content %}
-<h1> {{t}} </h1>
+{% block app_content %}
+<h1>{{t}}</h1>
+<br>
+
+<table class="table-bordered table-striped table-hover">
+    <thread class="thread-dark">
+    <tr>
+        <th class="text-center">Behavior and Ecology</th>
+        <th class="text-center">Extermination</th>
+        <th class="text-center">Location</th>
+        <th class="text-center">Habitat(s)</th>
+    </tr>
+    </thread>
+    <tr>
+
 
 <img src= {{p}}>
 
 
 
-<h2>Behavior and Ecology</h2>
-
-<h3>{{b}}</h3>
 
 
-
-<h2>Extermination</h2>
-
-<h3>{{e}}</h3>
+<td class="text-center">{{b}}</td>
 
 
-<h3>{{l}}</h3>
-  <ul>
+
+
+
+<th class="text-center">{{e}}</th>
+
+
+<td class="text-center">{{l}}</td>
+
+  <td class="text-center"><ul>
        {% for post in posts %}
         <li><b>{{ post.animals.username.name }}</b></li>
        {% endfor %}
-    </ul>
+  </ul></td>
+    </tr>
+</table>
+
+<br>
 
 
 

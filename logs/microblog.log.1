@@ -1,0 +1,113 @@
+2018-10-24 17:27:46,398 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-24 17:30:36,042 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-24 17:31:04,899 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-24 17:31:09,101 ERROR: Exception on /create_location [GET] [in C:\Users\Sonya\labs_205\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Sonya\Documents\Fall2018\labs_205\app\routes.py", line 200, in create_location
+    return render_template('create_location.html',  title='Sign In', form=form)
+NameError: name 'form' is not defined
+2018-10-24 17:31:37,326 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:25:44,041 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:26:46,627 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:28:52,829 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:29:06,249 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:31:12,358 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:32:05,285 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:35:45,722 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:39:08,499 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:43:09,276 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:51:57,926 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:54:13,945 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:56:39,736 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:58:38,112 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 02:59:33,791 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 03:03:24,291 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 03:05:06,697 ERROR: Exception on /create_habitat [POST] [in C:\Users\Sonya\labs_205\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: habitat.food
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Sonya\Documents\Fall2018\labs_205\app\routes.py", line 215, in create_habitat
+    db.session.commit()
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\orm\session.py", line 943, in commit
+    self.transaction.commit()
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\orm\session.py", line 467, in commit
+    self._prepare_impl()
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\orm\session.py", line 447, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\orm\session.py", line 2254, in flush
+    self._flush(objects)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\orm\session.py", line 2380, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\util\compat.py", line 249, in reraise
+    raise value
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\orm\session.py", line 2344, in _flush
+    flush_context.execute()
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
+    uow
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\orm\persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\orm\persistence.py", line 866, in _emit_insert_statements
+    execute(statement, params)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "C:\Users\Sonya\labs_205\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: habitat.food [SQL: 'INSERT INTO habitat (name, climate, food, "locationID") VALUES (?, ?, ?, ?)'] [parameters: ('zora domain', 'warm', 'warm', 6)] (Background on this error at: http://sqlalche.me/e/gkpj)
+2018-10-25 03:10:20,829 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 19:09:57,200 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]
+2018-10-25 20:00:57,021 INFO: Microblog startup [in C:\Users\Sonya\Documents\Fall2018\labs_205\app\__init__.py:46]

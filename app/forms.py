@@ -15,15 +15,31 @@ class AnimalForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     name = StringField('Name', validators=[DataRequired()])
     animalBio = StringField('Animal Bio', validators=[DataRequired()])
-    habitatName = StringField('habitat', validators=[DataRequired()])
-    climate = StringField('climate', validators=[DataRequired()])
-    food = StringField('food', validators=[DataRequired()])
+    #habitatName = StringField('habitat', validators=[DataRequired()])
+    #climate = StringField('climate', validators=[DataRequired()])
+    #food = StringField('food', validators=[DataRequired()])
     extermination = StringField('Extermination', validators=[DataRequired()])
-    location = StringField('Location', validators=[DataRequired()])
+    #location = StringField('Location', validators=[DataRequired()])
     submit = SubmitField('Sign In')
+    #sLocation = SelectField('Locations',validators=[DataRequired()], id='select_location')
+    #sAnimal = SelectMultipleField('Animal(s)',validators=[DataRequired()], id='select_animal')
+    year = DateField('Year of Extinction', validators=[DataRequired()])
+
+class HabitatForm(FlaskForm):
     sLocation = SelectField('Locations',validators=[DataRequired()], id='select_location')
     sAnimal = SelectMultipleField('Animal(s)',validators=[DataRequired()], id='select_animal')
-    year = DateField('Year of Extinction', validators=[DataRequired()])
+    climate = StringField('climate', validators=[DataRequired()])
+    food = StringField('food', validators=[DataRequired()])
+    habitatName = StringField('habitat', validators=[DataRequired()])
+    submit = SubmitField('Sign In')
+
+class LocationForm(FlaskForm):
+    location = StringField('Location', validators=[DataRequired()])
+    submit = SubmitField('Sign In')
+
+
+
+
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])

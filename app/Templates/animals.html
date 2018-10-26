@@ -3,11 +3,14 @@
 {% extends "base.html" %}
 
 
-{% block content %}
+{% block app_content %}
 
-
+<table class="table table-hover">
+    <td width="70px"></td>
     {% for post in posts  %}
+        <t>
         <div><p><a href="{{url_for('animal',name=post.animals.username.name)}}">{{post.animals.username.name}}</a></p></div>
+        </t>
     {% endfor %}
-
+</table>
 {% endblock %}

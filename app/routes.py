@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, AnimalForm
+from app.forms import LoginForm, RegistrationForm, AnimalForm, HabitatForm, LocationForm
 from app.models import User
 from app.models import Animal,Habitat,Location,AnimalToHabitat
 
@@ -187,7 +187,7 @@ def create():
 @app.route('/create_location', methods=['GET', 'POST'])
 @login_required
 def create_location():
-    form = AnimalForm()
+    form = LocationForm()
     if request.method == 'POST':
         flash('Location was created {}'.format(form.location.data))
 
@@ -197,17 +197,17 @@ def create_location():
 
 
         return redirect(url_for('animals'))
-    return render_template('create_location.html',  title='Sign In', form=form, sloc=form.sLocation)
+    return render_template('create_location.html',  title='Sign In', form=form)
 
 @app.route('/create_habitat', methods=['GET', 'POST'])
 @login_required
 def create_habitat():
-    form = AnimalForm()
+    form = HabitatForm()
     form.sLocation.choices = [(row.id, row.continent) for row in Location.query.all()]
     form.sAnimal.choices = [(rowA.id, rowA.name) for rowA in Animal.query.all()]
     L= Location.query.filter_by(id=form.sLocation.data).first()
     if request.method == 'POST':
-        flash('Habitat was created {}'.format(form.location.data))
+        flash('Habitat was created {}'.format(form.habitatName.data))
 
         H = Habitat(name=form.habitatName.data,climate=form.climate.data,food=form.climate.data,locationID=L.id)
 
